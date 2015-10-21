@@ -1,6 +1,6 @@
 {
   "name": "bcrypt-cache",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cache bcrypt successful comparisons to reduce CPU load on frequent bcrypt checks",
   "main": "index.js",
   "scripts": {
