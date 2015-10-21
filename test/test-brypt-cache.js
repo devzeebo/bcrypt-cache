@@ -17,10 +17,6 @@ describe('Token Authentication Cache', function () {
     var r, p;
     r = MockRedis.createClient(null, null, { fast: true });
     p = MockRedis.RedisClient.prototype;
-    r.getAsync = whenNode.lift(p.get.bind(r));
-    r.expireAsync = whenNode.lift(p.expire.bind(r));
-    r.setexAsync = whenNode.lift(p.setex.bind(r));
-    r.delAsync = whenNode.lift(p.del.bind(r));
     r.flushdbAsync = whenNode.lift(p.flushdb.bind(r));
     return r;
   }

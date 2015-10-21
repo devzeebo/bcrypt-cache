@@ -4,7 +4,7 @@ bcrypt-cache is a module designed to reduce CPU usage when frequently doing bcry
 
 An example use-case would be for verifying API tokens.
 
-If an API token is stored in the database as a bcrypt hash, the overhead to compare the plain-text token to the hash could be up to 250ms, depending on the work value.  If the API token is used in frequent succession, this can add significant CPU load to the application.
+If an API token is stored in the database as a bcrypt hash, the overhead to compare the plain-text token to the hash could be up to 250ms, depending on the work factor.  If the API token is used in frequent succession, this can add significant CPU load to the application.
 
 By using bcrypt-cache, the first time the token is received, it'll be compared to the bcrypt hash.  Once verified, a much simpler hash of the token will be stored in the cache and used for future comparisons.
 
@@ -67,7 +67,7 @@ var BcryptCache = require('./bcrypt-cache');
 var util = require('util');
 
 function MyCache (options) {
-  MemoryCache.super_.apply(this, arguments);
+  MyCache.super_.apply(this, arguments);
   // More initialization options here
 }
 
